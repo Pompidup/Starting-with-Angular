@@ -1,16 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { EventManagerPlugin } from '@angular/platform-browser/src/dom/events/event_manager';
+import { Component, OnInit } from '@angular/core';
+import { Email } from '../email';
 
 @Component({
-  selector: 'app-sign-up',
-  template: `
-    <button (click)="onClickMe()">Click me!</button>
-    {{clickMessage}}`
+  selector: 'sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss']
 })
-export class ClickMeComponent {
-  clickMessage = '';
+export class SignupComponent implements OnInit {
 
-  onClickMe() {
-    this.clickMessage = 'You are my hero!';
+	email : Email = {
+		email : 'nomprenom@email.com',
+		};
+
+  constructor() { }
+
+  ngOnInit() {
   }
+
 }
