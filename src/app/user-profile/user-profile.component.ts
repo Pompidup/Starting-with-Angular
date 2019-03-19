@@ -15,12 +15,24 @@ export class UserProfileComponent implements OnInit {
     photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
   };
 
+public show:boolean = false;
+public buttonName:any = 'Afficher/Masquer mon âge';
+
+ toggle() {
+  this.show = !this.show;
+
+// CHANGE THE NAME OF THE BUTTON.
+      if(this.show)
+        this.buttonName = "Masquer mon âge";
+      else
+        this.buttonName = "Afficher mon âge";
+    }
+
+
   constructor() { }
 
   ngOnInit() {
   }
-  afficherAge(){
 
-  }
 
 }

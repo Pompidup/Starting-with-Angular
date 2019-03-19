@@ -2,16 +2,23 @@
 
 
 <p>
-  <img [src]="photo">
-  <img bind-src="photo">
-  <img [attr.src]="photo">
-  <img src="assets/images/2.jpg">
+  <img [src]="User.photo">
 </p>
 <p>
-  Nom {{name}}
-  Prénom {{firstName}}
-  {{quote}}
+  Nom : {{User.name}}
 </p>
-<input [(ngModel)]="quote">
-<button (click)="afficherAge()">Afficher/Masquer mon âge</button>
+<p> Prénom : {{User.firstName}}</p>
+<p>{{User.quote}}</p>
+
+<p><input [(ngModel)]="User.quote"></p>
+
+<p>Afficher/Masquer mon âge</p>
+
+<button (click)="toggle()" id="bt">
+  {{buttonName}}
+</button>
+<ng-container *ngIf="show">
+  <p>{{User.age}}</p>
+</ng-container>
+
 
