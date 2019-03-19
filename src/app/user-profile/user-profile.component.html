@@ -1,0 +1,17 @@
+
+
+
+<p>
+  <img [src]="photo">
+  <img bind-src="photo">
+  <img [attr.src]="photo">
+  <img src="assets/images/2.jpg">
+</p>
+<p>
+  Nom {{name}}
+  Prénom {{firstName}}
+  {{quote}}
+</p>
+<input [(ngModel)]="quote">
+<button (click)="afficherAge()">Afficher/Masquer mon âge</button>
+
