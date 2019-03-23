@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'Solution for 01 - Angular - Les Composants';
   Your_name = 'Julien';
   quest2 = 'Solution for 02 - Angular - Le binding';
-
+  quest3 = 'Solution for 03 - Angular - Le Router';
 }
 
