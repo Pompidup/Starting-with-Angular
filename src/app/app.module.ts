@@ -7,13 +7,15 @@ import { SignupComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
+import { HightLightDirectiveDirective } from './hight-light-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     UserProfileComponent,
-    MenuComponent
+    MenuComponent,
+    HightLightDirectiveDirective
   ],
   imports: [
     BrowserModule,
