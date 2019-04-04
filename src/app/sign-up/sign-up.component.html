@@ -1,4 +1,33 @@
 <h2>
-    Your E-mail is : {{email.email}}
+  Solution for Angular 06 - Les formulaires : Templates Driven Forms
 </h2>
-<input [(ngModel)]="email.email" type="email"/>
+
+
+<form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
+
+  <!--Champ Username-->
+  <div>
+    <label for="user">Username</label>
+    <input name="user" type="text" [(ngModel)]="model.user" #user="ngModel" required minlength="4" maxlength="25">
+  </div>
+  <!-- Message d'erreurs pour la validation de Username -->
+  <div *ngIf="user.errors && myForm.submitted">
+    <span *ngIf="user.errors.required">Le champ user est requis</span>
+    <span *ngIf="user.errors.minlength">Le champ user doit faire au moins 4 caractères</span>
+    <span *ngIf="user.errors.maxlength">Le champ user ne doit pas dépasser 25 caractères</span>
+  </div>
+
+  <!--Champ email-->
+  <div>
+    <label for="email">E-mail</label>
+    <input name="email" type="email" [(ngModel)]="model.email" #email="ngModel" required email>
+  </div>
+  <!-- Message d'erreurs pour la validation d'email -->
+  <div *ngIf="email.errors && myForm.submitted">
+    <span *ngIf="email.errors.required">Le champ email est requis</span>
+    <span *ngIf="email.errors.email">Le champ email est invalide</span>
+  </div>
+
+
+  <button type="submit">Sauvegarder</button>
+</form>

@@ -8,13 +8,22 @@ import { Email } from '../email';
 })
 export class SignupComponent implements OnInit {
 
-	email : Email = {
-		email : 'nomprenom@email.com',
-		};
 
+
+  model: Signup = new Signup();
   constructor() { }
-
+  onSubmit() {
+    console.log(this.model);
+  }
   ngOnInit() {
   }
 
 }
+export class Signup {
+  user: string;
+  email: string;
+}
+
+
+
+
