@@ -1,0 +1,47 @@
+<form (ngSubmit)="myForm.valid && onSubmit()" [formGroup]="filmForm" #myForm="ngForm">
+  <h3>Angular 07, Rechercher un film, une série ou un épisode.</h3>
+  <div *ngIf="displayDiagnostic">
+    Form submitted ? {{myForm.submitted}}
+    Form valid ? {{myForm.valid}}
+    Form invalid ? {{myForm.invalid}}
+  </div>
+  <div formGroupName="FilmIdOrTitle">
+    <label for="FilmIdOrTitle-id">Identifiant :
+      <input name="FilmIdOrTitle-id" type="number" formControlName="Identifiant" />
+    </label>
+    <label for="FilmIdOrTitle-title">Titre :
+      <input name="FilmIdOrTitle-title" type="text" formControlName="Titre" />
+    </label>
+    <div *ngIf="filmForm.controls.FilmIdOrTitle.errors && myForm.submitted">
+      <span *ngIf="filmForm.controls.FilmIdOrTitle.errors.isRequired">L'un de deux champs "Identifiant"
+        ou "Titre" doit être renseigné</span>
+    </div>
+  </div>
+  <div>
+    <label for="type-film">Type :
+      <select name="type-film" formControlName="Type">
+        <option value="film">film</option>
+        <option value="serie">série</option>
+        <option value="episode">épisode</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label for="annee-film">Année de sortie :
+      <input name="annee-film" type="number" formControlName="AnneeDeSortie" />
+    </label>
+    <div *ngIf="filmForm.controls.AnneeDeSortie.errors && myForm.submitted">
+      <span *ngIf="filmForm.controls.AnneeDeSortie.errors.min">L'année doit être comprise entre {{minDate}} et
+        {{maxDate}}</span>
+    </div>
+  </div>
+  <div>
+    <label for="fiche-film">Fiche :
+      <select name="fiche-film" formControlName="Fiche">
+        <option value="complete">complète</option>
+        <option value="courte">courte</option>
+      </select>
+    </label>
+  </div>
+  <button type="submit">Lancer une recherche</button>
+</form>

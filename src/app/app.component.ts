@@ -12,7 +12,7 @@ export class AppComponent {
   quest2 = 'Solution for 02 - Angular - Le binding';
   quest3 = 'Solution for 03 - Angular - Les Directives';
   quest4 = 'Solution for 04 - Angular - Le Routeur';
-  displayMovieList:boolean = true;
+  displayMovieList:boolean = false;
   btFilm:any = 'Afficher la liste de films';
 
  toggle() {
