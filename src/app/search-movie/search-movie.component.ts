@@ -13,7 +13,8 @@ import * as moment from 'moment';
 export class SearchMovieComponent implements OnInit {
 
   public minDate: number = 1900;
-  public maxDate:number;
+  public maxDate:number = Number(moment().format("YYYY"));
+
  // public year:number;
 
 
@@ -33,8 +34,9 @@ export class SearchMovieComponent implements OnInit {
 
   ngOnInit() {
     // this.maxDate = moment(new Date()).format('YYYY');
-    this.maxDate = Number(moment().format("YYYY"));
+   // this.maxDate = Number(moment().format("YYYY"));
     //console.log(moment(new Date()).format('YYYY'));
+    console.log(this.maxDate);
     this.filmForm.valueChanges.subscribe(
       value => {
         console.log("filmForm value changes : ", value);
